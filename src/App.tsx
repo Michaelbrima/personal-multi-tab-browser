@@ -104,8 +104,8 @@ const regularLists = JSON.parse(localStorage.getItem('formInputs') || '{}')
 
               regularLists.map((regularList: any, index: any) => (
                 <li key={index}>
-                  <label id="tabTitle">Tab Title:</label>
-                  <input type="text" value={regularList.title} id="tabTitle" placeholder='Please enter tab title here.'></input>
+                  <label id="tabTitle">{regularList.title}</label>
+                  {/* <input type="text" value={regularList.title} id="tabTitle" placeholder='Please enter tab title here.'></input> */}
                   <br></br>
                   <iframe src={regularList.link}></iframe>
                   <br></br>
