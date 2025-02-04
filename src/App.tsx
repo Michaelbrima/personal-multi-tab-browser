@@ -4,8 +4,8 @@ import './App.css';
 // import Link from './components/Link';
 // import { TabItem } from './types';
 // import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 // import * as React from 'react'
 
@@ -22,10 +22,10 @@ import './App.css'
 function App() {
   const [newTab, setNewTab] = React.useState("")
   const [newLink, setNewLink] = React.useState("")
-  const [newEntry, setNewEntry] = React.useState([]);
-    const [count, setCount] = React.useState(0)
+  // const [newEntry, setNewEntry] = React.useState([]);
+    // const [count, setCount] = React.useState(0)
 
-  function handleSubmit(e: { preventDefault: () => void; } | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>){
+  function handleSubmit(){
     // e.preventDefault() //prevents page from refreshing
 
   var formInputs = {
@@ -47,10 +47,10 @@ function App() {
 
 
 
-React.useEffect(() => { //update the ;oncancel;storage whenever the newEntry array changes
-  localStorage.setItem('newEntry', JSON.stringify(newEntry));
-  },
-[newEntry]);
+// React.useEffect(() => { //update the ;oncancel;storage whenever the newEntry array changes
+//   localStorage.setItem('newEntry', JSON.stringify(newEntry));
+//   },
+// [newEntry]);
 // const formInputs: never[] = [];
 // localStorage.push(formInputs);
 // var tabList = localStorage.getItem("formInputs");
@@ -63,7 +63,7 @@ const regularLists = JSON.parse(localStorage.getItem('formInputs') || '{}')
   return (
     <>
     
-      <div>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -82,24 +82,31 @@ const regularLists = JSON.parse(localStorage.getItem('formInputs') || '{}')
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
-      
+      </p> */}
+      <h1 className="header">Multi Tab Browser</h1>
+      <p>Please enter a title and link into the entry fields below,<span><br></br></span> 
+        then press the 'Add' button to add a new tab to the page.</p>
       <div className="App">
       <header className="App-header">
 
         <form className='new-tab-form' onSubmit={handleSubmit}>
           <div className='tab-form-row'>
             <label id="entryTitle">Enter Title:</label>
+            <span> </span>
             <input type="text" value={newTab} onChange={e => setNewTab(e.target.value)} id="entryTitle" placeholder='Please enter tab title here.'></input>
+            <span> </span>
             <label id="entryLink" >Enter Link:</label>
+            <span> </span>
             <input type="text" value={newLink} onChange={e => setNewLink(e.target.value)} id="entryLink" placeholder='Please enter tab link here.'></input>
           </div>
+          {/* <p>Press the 'Add' button to add a new tab.</p> */}
+          <br></br>
         <button className='btn'>Add</button>
         </form>
 
-        <h1 className="header">Multi Tab Browser</h1>
+        
         <ul className="tabList">
-          {list}
+          {/* {list} */}
             {
 
               regularLists.map((regularList: any, index: any) => (
@@ -114,9 +121,9 @@ const regularLists = JSON.parse(localStorage.getItem('formInputs') || '{}')
               ))} 
 
 
-          {           
+          {/* {           
          localStorage.getItem("formInputs")
-  }
+  } */}
  
  
         </ul>
