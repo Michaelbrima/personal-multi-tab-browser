@@ -18,6 +18,7 @@ import './App.css'
 //   title: string;
 //   link: string;
 // }
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [newTab, setNewTab] = React.useState("")
@@ -61,7 +62,7 @@ const list = localStorage.getItem('formInputs')
 console.log(list)
 const regularLists = JSON.parse(localStorage.getItem('formInputs') || '{}')
   return (
-    <>
+    <BrowserRouter>
     
       {/* <div>
         <a href="https://vite.dev" target="_blank">
@@ -133,7 +134,7 @@ const regularLists = JSON.parse(localStorage.getItem('formInputs') || '{}')
       </header>
     </div>
 
-    </>
+    </BrowserRouter>
   )
 }
 
