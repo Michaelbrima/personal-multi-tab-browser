@@ -20,9 +20,9 @@ import './App.css'
 // }
 import { BrowserRouter } from 'react-router-dom';
 
-const App2 = () => <div>Hello React App from scratch</div>;
+// const App2 = () => <div>Hello React App from scratch</div>;
 
-const App = () => {
+function App() {
   const [newTab, setNewTab] = React.useState("")
   const [newLink, setNewLink] = React.useState("")
   // const [newEntry, setNewEntry] = React.useState([]);
